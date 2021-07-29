@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User account:</strong>
+  <%= @current_account.user_account_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @current_account.date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @current_account.description %>
+</p>
+
+<p>
+  <strong>Debit:</strong>
+  <%= @current_account.debit %>
+</p>
+
+<p>
+  <strong>Credit:</strong>
+  <%= @current_account.credit %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @current_account.balance %>
+</p>
+
+<%= link_to 'Edit', edit_current_account_path(@current_account) %> |
+<%= link_to 'Back', current_accounts_path %>

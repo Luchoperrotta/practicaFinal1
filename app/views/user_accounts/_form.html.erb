@@ -1,0 +1,39 @@
+<%= form_with(model: user_account) do |form| %>
+  <% if user_account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_account.errors.count, "error") %> prohibited this user_account from being saved:</h2>
+
+      <ul>
+        <% user_account.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :account_id %>
+    <%= form.collection_select(:account_id, Account.all,:id, :name) %>
+    
+
+  </div>
+
+  <div class="field">
+    <%= form.label :start %>
+    <%= form.datetime_select :start %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end %>
+    <%= form.datetime_select :end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bal %>
+    $ <%= form.text_field :bal %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_account: one
+  date: 2021-07-12 11:05:06
+  description: MyString
+  debit: 1.5
+  credit: 1.5
+  balance: 1.5
+
+two:
+  user_account: two
+  date: 2021-07-12 11:05:06
+  description: MyString
+  debit: 1.5
+  credit: 1.5
+  balance: 1.5

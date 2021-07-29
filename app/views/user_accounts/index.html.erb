@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cuenta Corriente</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Saldo inicial</th>
+    
+    
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_accounts.each do |user_account| %>
+      <tr>
+        <td><%= user_account.account.name %></td>
+        <td><%= link_to user_account.start, user_accounts_path(:sort => true, :by => "name", :order => (params[:order] == "asc" ? "desc" : "asc")) %></td>
+        <td><%= user_account.end %></td>
+        <td><%= user_account.bal  %></td>
+
+   
+        
+      
+        <td><%= link_to 'Show', user_account %></td>
+        <td><%= link_to 'Edit', edit_user_account_path(user_account) %></td>
+        <td><%= link_to 'Destroy', user_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User Account', new_user_account_path %>

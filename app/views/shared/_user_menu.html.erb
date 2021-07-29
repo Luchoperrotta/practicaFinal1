@@ -1,0 +1,12 @@
+
+	<% if user_signed_in? %>
+      	<span style="color:black"><strong><%= current_user.last_name.upcase %>, </strong><%= current_user.first_name %></span>
+
+      	<li><%= link_to "Editar Perfil", edit_user_registration_path, class: "btn" %></li>
+      	<hr>
+      	<li><%= link_to "Cerrar Sesión", destroy_user_session_path, class: "btn",  method: :delete  %></li>
+    	
+	<% else %>
+  	<%= link_to "Iniciar Sesión", new_user_session_url, class: 'btn btn-success' %>
+	<% end %>
+
